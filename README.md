@@ -1,16 +1,16 @@
-# Template
+# CV Application
 
 [Live Demo](#)<br/><br/>
 [![The Odin Project](https://img.shields.io/badge/The%20Odin%20Project-A9792B?logo=theodinproject&logoColor=fff)](#)
 
 ## Overview
 
-This is a project from [The Odin Project](https://theodinproject.com): [Project: ](#).
+This is a project from [The Odin Project](https://theodinproject.com): [Project: CV Application](https://www.theodinproject.com/lessons/node-path-react-new-cv-application). This project allows users to input their information to generate a CV/resume.
 
 ## Learning Points
 
--
--
+- Understanding basic concepts of React (Components, Props, JSX, States)
+- Using the basics of using Tailwind CSS to simplify the process of styling my projects
 
 ## Tech Stack
 
@@ -59,5 +59,6 @@ npm run dev
 
 ## Roadmap
 
-- [ ] XXX
-- [ ] XXX
+- [ ] Adding relevant input fields into the different sections
+- [ ] Rendering the inputs in a CV/Resume template through the submit and edit buttons
+- [ ] Deploy to React application using Vercel
