@@ -15,10 +15,11 @@ function App() {
   });
 
   const handleGeneralInfoChange = (e) => {
-    setCvData({
-      ...cvData,
-      personalInformation: { ...cvData.personalInformation, [e.target.id]: e.target.value },
-    });
+    345;
+    setCvData((prevCvData) => ({
+      ...prevCvData,
+      personalInformation: { ...prevCvData.personalInformation, [e.target.id]: e.target.value },
+    }));
   };
 
   return (
