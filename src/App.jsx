@@ -15,7 +15,6 @@ function App() {
   });
 
   const handleGeneralInfoChange = (e) => {
-    345;
     setCvData((prevCvData) => ({
       ...prevCvData,
       personalInformation: { ...prevCvData.personalInformation, [e.target.id]: e.target.value },
