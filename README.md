@@ -1,6 +1,6 @@
 # CV Application
 
-[Live Demo](#)<br/><br/>
+[Live Demo](https://cv-application-delta-brown.vercel.app/)<br/><br/>
 [![The Odin Project](https://img.shields.io/badge/The%20Odin%20Project-A9792B?logo=theodinproject&logoColor=fff)](#)
 
 ## Overview
@@ -64,4 +64,4 @@ npm run dev
 - [x] Added an accordion to collapse and expand one section at a time
 - [x] Added functionalities remove and add entries to the Education and Experience portion
 - [x] Added functionalities to save the CV Preview to a PDF
-- [ ] Deploy React app to Vercel
+- [x] Deploy React app to Vercel
