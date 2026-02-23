@@ -47,6 +47,8 @@ function App() {
         position: 'Quantative Developer',
         startDate: 'Aug 2031',
         endDate: 'Present',
+        responsibilities:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
       },
       {
         id: crypto.randomUUID(),
@@ -54,6 +56,8 @@ function App() {
         company: 'Jump Trading',
         startDate: 'Feb 2030',
         endDate: 'Aug 2030',
+        responsibilities:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
       },
     ],
   });
@@ -71,6 +75,7 @@ function App() {
       company: 'Company',
       startDate: 'Start Date',
       endDate: 'End Date',
+      responsibilities: 'Enter key responsbilities and roles',
     },
   };
 

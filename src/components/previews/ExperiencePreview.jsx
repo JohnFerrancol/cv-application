@@ -15,6 +15,7 @@ export default function ExperiencePreview({ experienceList }) {
                 {experience.startDate} - {experience.endDate}
               </p>
             </div>
+            <p>{experience.responsibilities}</p>
           </div>
         ))}
       </div>

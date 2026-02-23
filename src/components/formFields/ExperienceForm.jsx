@@ -38,6 +38,13 @@ export default function ExperienceForm({ experienceList, onChange, onAddClick, o
                 onChange={onChange}
               />
             </div>
+            <InputField
+              id={`experienceList*${experience.id}*responsibilities`}
+              value={experience.responsibilities}
+              label="Responsibilities"
+              onChange={onChange}
+              textarea={true}
+            />
           </div>
         ))}
         <AddButton onClick={onAddClick} />
