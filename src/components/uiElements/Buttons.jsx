@@ -1,3 +1,5 @@
+import { MdDelete } from 'react-icons/md';
+
 function AddButton({ onClick }) {
   return (
     <button
@@ -10,4 +12,12 @@ function AddButton({ onClick }) {
   );
 }
 
-export { AddButton };
+function DeleteButton({ onClick, buttonId }) {
+  return (
+    <button onClick={onClick} className="self-end" data-button-id={buttonId}>
+      <MdDelete size={25} />
+    </button>
+  );
+}
+
+export { AddButton, DeleteButton };

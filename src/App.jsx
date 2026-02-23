@@ -115,6 +115,20 @@ function App() {
     });
   };
 
+  const deleteEntry = (e) => {
+    const [sectionToUpdate, targetEntryId] = e.currentTarget.dataset.buttonId.split('*');
+
+    console.log();
+    setCvData((prevCvData) => {
+      return {
+        ...prevCvData,
+        [sectionToUpdate]: prevCvData[sectionToUpdate].filter(
+          (entry) => entry.id !== targetEntryId
+        ),
+      };
+    });
+  };
+
   return (
     <div className="bg-gray-50 font-poppins pb-10 flex flex-col h-screen">
       <Header />
@@ -138,9 +152,10 @@ function App() {
             <EducationForm
               educationList={cvData.educationList}
               onChange={updateEducationandExperience}
-              onClick={() => {
+              onAddClick={() => {
                 addEntry('educationList');
               }}
+              onDeleteClick={deleteEntry}
             />
           </Accordian>
           <Accordian
@@ -152,9 +167,10 @@ function App() {
             <ExperienceForm
               experienceList={cvData.experienceList}
               onChange={updateEducationandExperience}
-              onClick={() => {
+              onAddClick={() => {
                 addEntry('experienceList');
               }}
+              onDeleteClick={deleteEntry}
             />
           </Accordian>
         </div>

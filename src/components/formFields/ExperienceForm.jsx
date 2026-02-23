@@ -1,8 +1,8 @@
 import InputField from '../uiElements/InputField';
-import { AddButton } from '../uiElements/Buttons';
-import { MdOutlineWork } from 'react-icons/md';
+import { AddButton, DeleteButton } from '../uiElements/Buttons';
+// import { MdDelete } from 'react-icons/md';
 
-export default function ExperienceForm({ experienceList, onChange, onClick }) {
+export default function ExperienceForm({ experienceList, onChange, onAddClick, onDeleteClick }) {
   return (
     <div>
       <div className="flex flex-col gap-5">
@@ -11,6 +11,7 @@ export default function ExperienceForm({ experienceList, onChange, onClick }) {
             key={experience.id}
             className="bg-gray-50 p-5 rounded-2xl shadow-xs border-2 border-gray-200 flex flex-col gap-3"
           >
+            <DeleteButton onClick={onDeleteClick} buttonId={`experienceList*${experience.id}`} />
             <InputField
               id={`experienceList*${experience.id}*position`}
               value={experience.position}
@@ -39,7 +40,7 @@ export default function ExperienceForm({ experienceList, onChange, onClick }) {
             </div>
           </div>
         ))}
-        <AddButton onClick={onClick} />
+        <AddButton onClick={onAddClick} />
       </div>
     </div>
   );
