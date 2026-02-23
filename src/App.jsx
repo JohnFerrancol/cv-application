@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './App.css';
+import './styles/App.css';
 
 import Header from './components/layout/Header';
 import GeneralInfoForm from './components/formFields/GeneralInfoForm';
