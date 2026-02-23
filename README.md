@@ -59,6 +59,9 @@ npm run dev
 
 ## Roadmap
 
-- [ ] Adding relevant input fields into the different sections
-- [ ] Rendering the inputs in a CV/Resume template through the submit and edit buttons
-- [ ] Deploy to React application using Vercel
+- [x] Syncing input changes from relevant form fields to the CV Preview 
+- [x] Styling the web application
+- [x] Added an accordion to collapse and expand one section at a time
+- [x] Added functionalities remove and add entries to the Education and Experience portion
+- [x] Added functionalities to save the CV Preview to a PDF
+- [ ] Deploy React app to Vercel
