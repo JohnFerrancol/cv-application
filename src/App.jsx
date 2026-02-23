@@ -9,6 +9,12 @@ import GeneralInfoPreview from './components/previews/GeneralInfoPreview';
 import EducationPreview from './components/previews/EducationPreview';
 import ExperiencePreview from './components/previews/ExperiencePreview';
 
+import { MdPerson } from 'react-icons/md';
+import { IoMdSchool } from 'react-icons/io';
+import { MdOutlineWork } from 'react-icons/md';
+
+import Accordian from './components/uiElements/Accordian';
+
 function App() {
   const [cvData, setCvData] = useState({
     personalInformation: {
@@ -51,6 +57,7 @@ function App() {
       },
     ],
   });
+  const [activeSection, setActiveSection] = useState('general-info');
 
   const defaultTemplate = {
     educationList: {
@@ -109,26 +116,47 @@ function App() {
   };
 
   return (
-    <div className="bg-gray-50 font-poppins pb-10 flex flex-col">
+    <div className="bg-gray-50 font-poppins pb-10 flex flex-col h-screen">
       <Header />
       <main className="flex-1 grid grid-cols-2 pt-6">
         <div className="flex flex-col gap-4 px-15">
           <h1 className="text-4xl font-bold">Your Information</h1>
-          <GeneralInfoForm {...cvData.personalInformation} onChange={updateGeneralInfo} />
-          <EducationForm
-            educationList={cvData.educationList}
-            onChange={updateEducationandExperience}
-            onClick={() => {
-              addEntry('educationList');
-            }}
-          />
-          <ExperienceForm
-            experienceList={cvData.experienceList}
-            onChange={updateEducationandExperience}
-            onClick={() => {
-              addEntry('experienceList');
-            }}
-          />
+          <Accordian
+            title="Personal Information"
+            icon={MdPerson}
+            isActive={activeSection === 'general-info'}
+            onShow={() => setActiveSection('general-info')}
+          >
+            <GeneralInfoForm {...cvData.personalInformation} onChange={updateGeneralInfo} />
+          </Accordian>
+          <Accordian
+            title="Education"
+            icon={IoMdSchool}
+            isActive={activeSection === 'education'}
+            onShow={() => setActiveSection('education')}
+          >
+            <EducationForm
+              educationList={cvData.educationList}
+              onChange={updateEducationandExperience}
+              onClick={() => {
+                addEntry('educationList');
+              }}
+            />
+          </Accordian>
+          <Accordian
+            title="Experience"
+            icon={MdOutlineWork}
+            isActive={activeSection === 'experience'}
+            onShow={() => setActiveSection('experience')}
+          >
+            <ExperienceForm
+              experienceList={cvData.experienceList}
+              onChange={updateEducationandExperience}
+              onClick={() => {
+                addEntry('experienceList');
+              }}
+            />
+          </Accordian>
         </div>
         <div className="flex flex-col gap-5 px-15">
           <h1 className="text-4xl font-bold">Live Preview</h1>

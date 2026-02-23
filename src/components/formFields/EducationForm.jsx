@@ -1,16 +1,10 @@
 import InputField from '../uiElements/InputField';
 import { AddButton } from '../uiElements/Buttons';
-import Form from '../uiElements/Form';
-import { IoMdSchool } from 'react-icons/io';
 
 export default function EducationForm({ educationList, onChange, onClick }) {
   return (
-    <Form>
-      <div className="flex gap-3 items-center mb-3">
-        <IoMdSchool size={35} />
-        <h1 className="text-2xl font-bold">Education</h1>
-      </div>
-      <div className="flex flex-col gap-5">
+    <div>
+      <div className=" flex flex-col gap-5">
         {educationList.map((education) => (
           <div
             key={education.id}
@@ -44,8 +38,8 @@ export default function EducationForm({ educationList, onChange, onClick }) {
             </div>
           </div>
         ))}
+        <AddButton onClick={onClick} />
       </div>
-      <AddButton onClick={onClick} />
-    </Form>
+    </div>
   );
 }
