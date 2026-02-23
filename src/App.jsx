@@ -130,9 +130,9 @@ function App() {
   };
 
   return (
-    <div className="bg-gray-50 font-poppins pb-10 flex flex-col h-screen">
+    <div className="bg-gray-50 font-poppins pb-10 flex flex-col">
       <Header />
-      <main className="flex-1 grid grid-cols-2 pt-6">
+      <main className="min-h-screen grid grid-cols-2 pt-6">
         <div className="flex flex-col gap-4 px-15">
           <h1 className="text-4xl font-bold">Your Information</h1>
           <Accordian
@@ -176,7 +176,10 @@ function App() {
         </div>
         <div className="flex flex-col gap-5 px-15">
           <h1 className="text-4xl font-bold">Live Preview</h1>
-          <div className="bg-white flex-1 px-15 py-5 rounded border border-gray-200 shadow-sm mx-10 flex flex-col gap-5">
+          <div
+            id="cv-preview"
+            className="bg-white flex-1 px-15 py-5 rounded border border-gray-200 shadow-sm mx-10 flex flex-col gap-5"
+          >
             <GeneralInfoPreview {...cvData.personalInformation} />
             <EducationPreview educationList={cvData.educationList} />
             <ExperiencePreview experienceList={cvData.experienceList} />
