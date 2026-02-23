@@ -1,11 +1,15 @@
 import InputField from '../uiElements/InputField';
 import { AddButton } from '../uiElements/Buttons';
 import Form from '../uiElements/Form';
+import { MdOutlineWork } from 'react-icons/md';
 
 export default function ExperienceForm({ experienceList, onChange, onClick }) {
   return (
     <Form>
-      <h1 className="text-2xl font-bold">Experience</h1>
+      <div className="flex gap-3 items-center mb-3">
+        <MdOutlineWork size={35} />
+        <h1 className="text-2xl font-bold">Experience</h1>
+      </div>
       <div className="flex flex-col gap-5">
         {experienceList.map((experience) => (
           <div
