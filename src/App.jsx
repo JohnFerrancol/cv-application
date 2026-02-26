@@ -16,6 +16,7 @@ import { MdOutlineWork } from 'react-icons/md';
 import Accordian from './components/uiElements/Accordian';
 
 function App() {
+  // Initialise the cvData state variable which houses the relevant information displayed in the CV Preview
   const [cvData, setCvData] = useState({
     personalInformation: {
       firstName: 'John',
@@ -61,9 +62,11 @@ function App() {
       },
     ],
   });
+
+  // Initialise an activeSection state to store which section of the resume does the user want to change
   const [activeSection, setActiveSection] = useState('general-info');
 
-  const defaultTemplate = {
+  const DEFAULT_TEMPLATE = {
     educationList: {
       school: 'School',
       program: 'Program',
@@ -79,19 +82,24 @@ function App() {
     },
   };
 
+  // Function defined to dynamically change the user's personal information in the CV
   const updateGeneralInfo = (e) => {
+    // Changes the CV Data by getting the id of the target which coincides with the relevant key and change the value
     setCvData((prevCvData) => ({
       ...prevCvData,
       personalInformation: { ...prevCvData.personalInformation, [e.target.id]: e.target.value },
     }));
   };
 
+  // Function defined to dynamically change the user's education and experiences information in the CV
   const updateEducationandExperience = (e) => {
+    // The input in these form fields are defined by three parts divided into 3 parts seperated by an *: the section of CV to update, the target id of the entry within that section and the target input field to change
     const [sectionToUpdate, targetId, targetInputField] = e.target.id.split('*');
 
     setCvData((prevCvData) => {
       return {
         ...prevCvData,
+        // Find the id of the entry within the section and then change the relevant values from the target key
         [sectionToUpdate]: prevCvData[sectionToUpdate].map((entry) => {
           if (entry.id !== targetId) {
             return entry;
@@ -106,13 +114,16 @@ function App() {
     });
   };
 
+  // Function defined to add an entry to the user's education and experiences information in the CV
   const addEntry = (sectionToUpdate) => {
     setCvData((prevCvData) => {
+      // Initialise a new object using the default template for new entries for education/experience
       const newEntry = {
         id: crypto.randomUUID(),
-        ...defaultTemplate[sectionToUpdate],
+        ...DEFAULT_TEMPLATE[sectionToUpdate],
       };
 
+      // Add the the new entry to the cvData state
       return {
         ...prevCvData,
         [sectionToUpdate]: [...prevCvData[sectionToUpdate], newEntry],
@@ -120,10 +131,12 @@ function App() {
     });
   };
 
+  // Function defined to delete an entry to the user's education and experiences information in the CV
   const deleteEntry = (e) => {
+    // The input in these form fields are defined by three parts divided into 2 parts seperated by an *: which section does the id of the entry belong to, the target id of the entry
     const [sectionToUpdate, targetEntryId] = e.currentTarget.dataset.buttonId.split('*');
 
-    console.log();
+    // From the relevant section, filter the id that the user wants to delete
     setCvData((prevCvData) => {
       return {
         ...prevCvData,
